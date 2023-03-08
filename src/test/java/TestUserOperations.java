@@ -1,5 +1,6 @@
 import io.restassured.http.ContentType;
 import org.apache.http.HttpStatus;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pojo.User;
 
@@ -11,17 +12,17 @@ import static org.hamcrest.Matchers.equalTo;
 public class TestUserOperations {
 
     @Test
+    @DisplayName("Test User creation")
     public void testUserCreation() {
-        User user = new User();
-
-        user.setId(1232312);
-        user.setUsername("testRIO");
-        user.setFirstName("Test");
-        user.setLastName("Test");
-        user.setEmail("test@mail.com");
-        user.setPassword("!Welcome123");
-        user.setPhone("5555555");
-        user.setUserStatus(0);
+        User user = User.builder()
+                .username("restAssuredTestUser")
+                .firstName("Test")
+                .lastName("Test")
+                .email("restAssuredTest@mail.com")
+                .password("!Welcome123")
+                .phone("5555555")
+                .userStatus(0)
+                .build();
 
         given()
                 .contentType(ContentType.JSON)
