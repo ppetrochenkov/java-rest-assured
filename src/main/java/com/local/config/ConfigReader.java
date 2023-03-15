@@ -1,4 +1,4 @@
-package config;
+package com.local.config;
 
 import org.aeonbits.owner.ConfigFactory;
 

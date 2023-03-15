@@ -1,8 +1,8 @@
-package resources;
+package com.local.resourceTests;
 
-import client.resource.ResourceClient;
+import com.local.client.resource.ResourceClient;
+import com.local.model.ResourceDto;
 import io.restassured.response.Response;
-import model.ResourceDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,6 @@
-package client;
+package com.local.client;
 
-import config.ConfigReader;
+import com.local.config.ConfigReader;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;

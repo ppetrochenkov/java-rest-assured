@@ -1,6 +1,6 @@
-package client.user;
+package com.local.client.user;
 
-import client.BaseClient;
+import com.local.client.BaseClient;
 import io.restassured.response.Response;
 
 import java.util.HashMap;
@@ -10,8 +10,8 @@ import static io.restassured.RestAssured.given;
 
 public class UserClient extends BaseClient {
 
-    private static final String FETCH_ALL_USERS_PATH = "/users";
-    private static final String FETCH_SINGLE_USER_PATH = "/users/{id}";
+    public static final String FETCH_ALL_USERS_PATH = "/users";
+    public static final String FETCH_SINGLE_USER_PATH = "/users/{id}";
 
     public Response fetchUsersListResponse(int limitPerPage, int delay) {
         Map<String, Integer> queryParams = new HashMap<>();

@@ -1,19 +1,19 @@
-package client.user;
+package com.local.client.user;
 
-import client.BaseClient;
+import com.local.client.BaseClient;
+import com.local.model.LoginDto;
 import io.restassured.response.Response;
-import model.RegisterDto;
 
 import static io.restassured.RestAssured.given;
 
-public class RegisterClient extends BaseClient {
+public class LoginClient extends BaseClient {
 
-    private static final String REGISTER_PATH = "/register";
+    public static final String LOGIN_PATH = "/login";
 
-    public Response registerUserResponse(RegisterDto payload) {
+    public Response loginResponse(LoginDto payload) {
         return given()
                 .body(payload)
-                .post(REGISTER_PATH)
+                .post(LOGIN_PATH)
                 .then()
                 .spec(payload.getEmail() != null && payload.getPassword() != null ? responseSpec(STATUS_OK) : responseSpec(400))
                 .extract().response();

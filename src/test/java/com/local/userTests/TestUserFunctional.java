@@ -1,12 +1,12 @@
-package users;
+package com.local.userTests;
 
-import client.user.LoginClient;
-import client.user.RegisterClient;
-import client.user.UserClient;
+import com.local.client.user.LoginClient;
+import com.local.client.user.RegisterClient;
+import com.local.client.user.UserClient;
+import com.local.model.LoginDto;
+import com.local.model.RegisterDto;
+import com.local.model.UserDto;
 import io.restassured.response.Response;
-import model.LoginDto;
-import model.RegisterDto;
-import model.UserDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

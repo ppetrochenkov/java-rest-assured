@@ -1,4 +1,4 @@
-package model;
+package com.local.model;
 
 import lombok.experimental.SuperBuilder;
 

@@ -1,14 +1,14 @@
-package client.resource;
+package com.local.client.resource;
 
-import client.BaseClient;
+import com.local.client.BaseClient;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
 public class ResourceClient extends BaseClient {
 
-    private static final String FETCH_ALL_RESOURCES_PATH = "/unknown";
-    private static final String FETCH_SINGLE_RESOURCE_PATH = "/unknown/{id}";
+    public static final String FETCH_ALL_RESOURCES_PATH = "/unknown";
+    public static final String FETCH_SINGLE_RESOURCE_PATH = "/unknown/{id}";
 
     public Response fetchAllResourcesResponse(int limitPerPage) {
         return given()
