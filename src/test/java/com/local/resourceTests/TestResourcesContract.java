@@ -3,14 +3,17 @@ package com.local.resourceTests;
 import com.local.BaseTest;
 import com.local.client.resource.ResourceClient;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static com.local.utils.TestSuiteTags.CONTRACT;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class TestResourcesContract extends BaseTest {
 
     @Test
+    @Tag(CONTRACT)
     @DisplayName("Validate resources response Json contract")
     public void testResourcesContract() {
         given()
