@@ -1,2 +1,10 @@
+# Idea files
 .idea
+*.iml
+
+# Maven files
 target
+
+# Allure files
+.allure
+allure-results

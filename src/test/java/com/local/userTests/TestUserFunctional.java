@@ -6,6 +6,7 @@ import com.local.client.user.UserClient;
 import com.local.model.LoginDto;
 import com.local.model.RegisterDto;
 import com.local.model.UserDto;
+import io.qameta.allure.Feature;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -17,6 +18,7 @@ import static com.local.utils.TestSuiteTags.FUNCTIONAL;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
+@Feature("Verify User functional operations")
 public class TestUserFunctional {
 
     private final UserClient userClient = new UserClient();
@@ -47,7 +49,7 @@ public class TestUserFunctional {
                 .jsonPath()
                 .getObject("data", UserDto.class);
         assertThat(user, notNullValue());
-        assertThat(user.getEmail(), equalTo("janet.weaver@reqres.in"));
+        assertThat(user.getEmail(), equalTo("janet.weaver@reqre.in"));
     }
 
     @Test
@@ -56,7 +58,7 @@ public class TestUserFunctional {
     public void testNotExistingUserFetch() {
         Response response = userClient.fetchSingleUserResponse(23, false);
 
-        assertThat(response.getStatusCode(), equalTo(404));
+        assertThat(response.getStatusCode(), equalTo(200));
         assertThat(response.getStatusLine(), containsString("Not Found"));
     }
 

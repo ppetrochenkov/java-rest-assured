@@ -1,6 +1,7 @@
 package com.local.client;
 
 import com.local.config.ConfigReader;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -25,6 +26,7 @@ public class BaseClient {
                 .log(LogDetail.URI)
                 .log(LogDetail.METHOD)
                 .log(LogDetail.BODY)
+                .addFilter(new AllureRestAssured())
                 .build();
     }
 

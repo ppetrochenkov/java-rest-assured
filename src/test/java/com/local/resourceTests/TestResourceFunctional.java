@@ -2,6 +2,7 @@ package com.local.resourceTests;
 
 import com.local.client.resource.ResourceClient;
 import com.local.model.ResourceDto;
+import io.qameta.allure.Feature;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -14,13 +15,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
+@Feature("Verify Resource fetch operations")
 public class TestResourceFunctional {
 
     private final ResourceClient resourceClient = new ResourceClient();
 
     @Test
     @Tag(FUNCTIONAL)
-    @DisplayName("Verify all resources fetching")
+    @DisplayName("Verify resources list fetching")
     public void testListResourceFetch() {
         Response response = resourceClient.fetchAllResourcesResponse(20);
 
